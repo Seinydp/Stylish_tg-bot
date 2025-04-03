@@ -1,7 +1,7 @@
 import aiogram
 import asyncio
 import logging
-import Stylish_bot.config as config
+import config as config
 import art
 
 
@@ -68,8 +68,8 @@ dp.include_router(user_router)                                              #х�
 @user_router.message(Command("start"))                                      # Старт простой, 
 async def cmd_start(message:Message,state: FSMContext):
     await message.answer("""Привет! Это бот живущий на моем сервере \n
-                         Он Стилизует твой текст символами!  \n
-                         Выбери размер (кликни на кнопку)""",
+Он Стилизует твой текст символами!  \n
+Выбери размер (кликни на кнопку)""",
                          reply_markup=change_size)                          # Добавляем кнопки
     
     await state.set_state(UserActions.CHOOSING_SIZE)                        # Присвоить состояние выборы кнопки (любой текст с кнопки)
